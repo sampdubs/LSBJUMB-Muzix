@@ -26,7 +26,7 @@ for page, title in tqdm(matches[:-1]):
     pageObj = pdfReader.pages[page + 1]
 
     pdfWriter.add_page(pageObj)
-    newFile = open(f"songz/{title}.pdf", 'wb')
+    newFile = open(f"../Songz/{title}.pdf", 'wb')
 
     pdfWriter.write(newFile)
     newFile.close()
@@ -39,7 +39,7 @@ for page in range(startPage + 1, startPage + 6):
     pageObj = pdfReader.pages[page]
     pdfWriter.add_page(pageObj)
 
-newFile = open(f"songz/{title}.pdf", 'wb')
+newFile = open(f"../Songz/{title}.pdf", 'wb')
 
 pdfWriter.write(newFile)
 newFile.close()
