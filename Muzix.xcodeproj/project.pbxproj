@@ -14,6 +14,7 @@
 		C4F3F9FF2ACF51C1009B8A0F /* MuzixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3F9FE2ACF51C1009B8A0F /* MuzixTests.swift */; };
 		C4F3FA092ACF51C1009B8A0F /* MuzixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3FA082ACF51C1009B8A0F /* MuzixUITests.swift */; };
 		C4F3FA0B2ACF51C1009B8A0F /* MuzixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3FA0A2ACF51C1009B8A0F /* MuzixUITestsLaunchTests.swift */; };
+		C4F3FA182ACF7265009B8A0F /* Songz in Resources */ = {isa = PBXBuildFile; fileRef = C4F3FA172ACF7265009B8A0F /* Songz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		C4F3FA042ACF51C1009B8A0F /* MuzixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuzixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F3FA082ACF51C1009B8A0F /* MuzixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzixUITests.swift; sourceTree = "<group>"; };
 		C4F3FA0A2ACF51C1009B8A0F /* MuzixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C4F3FA172ACF7265009B8A0F /* Songz */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = Songz; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		C4F3F9E02ACF51C0009B8A0F = {
 			isa = PBXGroup;
 			children = (
+				C4F3FA172ACF7265009B8A0F /* Songz */,
 				C4F3F9EB2ACF51C0009B8A0F /* Muzix */,
 				C4F3F9FD2ACF51C1009B8A0F /* MuzixTests */,
 				C4F3FA072ACF51C1009B8A0F /* MuzixUITests */,
@@ -233,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F3FA182ACF7265009B8A0F /* Songz in Resources */,
 				C4F3F9F52ACF51C1009B8A0F /* Preview Assets.xcassets in Resources */,
 				C4F3F9F12ACF51C1009B8A0F /* Assets.xcassets in Resources */,
 			);
@@ -420,6 +424,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Muzix/Preview Content\"";
+				DEVELOPMENT_TEAM = 496474LP4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -456,6 +461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Muzix/Preview Content\"";
+				DEVELOPMENT_TEAM = 496474LP4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
