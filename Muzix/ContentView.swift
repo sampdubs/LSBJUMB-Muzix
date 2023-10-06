@@ -46,7 +46,7 @@ struct ContentView: View {
                             currentSong = file
                         }, label: {
                             Text(file)
-                                .bold()
+                                .fontWeight(file == "Teazers" ? .black : .bold)
                         })
                     }
                 }
