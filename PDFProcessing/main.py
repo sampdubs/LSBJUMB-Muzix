@@ -39,7 +39,7 @@ for page in range(startPage + 1, startPage + 6):
     pageObj = pdfReader.pages[page]
     pdfWriter.add_page(pageObj)
 
-newFile = open(f"../Songz/{title}.pdf", 'wb')
+newFile = open(f"../Songz/Teazers.pdf", 'wb')
 
 pdfWriter.write(newFile)
 newFile.close()
