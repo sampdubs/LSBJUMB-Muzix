@@ -21,6 +21,9 @@ struct ContentView: View {
                 let index = items[i].index(items[i].endIndex, offsetBy: -5)
                 items[i] = String(items[i][...index])
             }
+            items = items.sorted()
+            items.remove(at: items.firstIndex{$0 == "Teazers"}!)
+            items.insert("Teazers", at: 0)
             return items
         } catch {
             return ["Error"]
