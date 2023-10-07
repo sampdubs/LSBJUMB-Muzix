@@ -32,12 +32,12 @@ struct ContentView: View {
     }
     
     var body: some View {
-        if (currentSong != nil){
+        if (currentSong != nil) {
             ZStack {
                 PDFKitView(url: URL(fileURLWithPath: path + currentSong! + ".pdf"))
                 closeButton
             }
-    
+            
         } else {
             ScrollView {
                 VStack {
