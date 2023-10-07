@@ -40,15 +40,19 @@ struct ContentView: View {
             
         } else {
             ScrollView {
-                VStack {
-                    ForEach(self.getFiles(), id: \.self) { file in
-                        Button(action: {
-                            currentSong = file
-                        }, label: {
-                            Text(file)
-                                .fontWeight(file == "Teazers" ? .black : .bold)
-                        })
+                HStack{
+                    Spacer()
+                    VStack {
+                        ForEach(self.getFiles(), id: \.self) { file in
+                            Button(action: {
+                                currentSong = file
+                            }, label: {
+                                Text(file)
+                                    .fontWeight(file == "Teazers" ? .black : .bold)
+                            })
+                        }
                     }
+                    Spacer()
                 }
             }
             .padding()
@@ -62,6 +66,8 @@ struct ContentView: View {
                     currentSong = nil
                 }) {
                     Image(systemName: "xmark.circle")
+                        .resizable()
+                        .frame(width: 32.0, height: 32.0)
                         .padding(1)
                 }
                 Spacer()
