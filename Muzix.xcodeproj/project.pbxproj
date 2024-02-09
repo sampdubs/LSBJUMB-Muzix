@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C426102E2B760EBD00F6F497 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426102D2B760EBD00F6F497 /* CloseButton.swift */; };
+		C42610302B760FA000F6F497 /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426102F2B760FA000F6F497 /* SongListView.swift */; };
+		C42610342B76115C00F6F497 /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42610332B76115C00F6F497 /* PDFKitView.swift */; };
+		C42610362B76137000F6F497 /* DictationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42610352B76137000F6F497 /* DictationView.swift */; };
+		C426103A2B7620DA00F6F497 /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42610392B7620DA00F6F497 /* Levenshtein.swift */; };
+		C426103F2B76288500F6F497 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426103E2B76288500F6F497 /* SpeechRecognizer.swift */; };
 		C4F3F9ED2ACF51C0009B8A0F /* MuzixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3F9EC2ACF51C0009B8A0F /* MuzixApp.swift */; };
 		C4F3F9EF2ACF51C0009B8A0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3F9EE2ACF51C0009B8A0F /* ContentView.swift */; };
 		C4F3F9F12ACF51C1009B8A0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F3F9F02ACF51C1009B8A0F /* Assets.xcassets */; };
@@ -35,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C426102D2B760EBD00F6F497 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		C426102F2B760FA000F6F497 /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
+		C42610332B76115C00F6F497 /* PDFKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
+		C42610352B76137000F6F497 /* DictationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictationView.swift; sourceTree = "<group>"; };
+		C42610392B7620DA00F6F497 /* Levenshtein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levenshtein.swift; sourceTree = "<group>"; };
+		C426103E2B76288500F6F497 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		C4F3F9E92ACF51C0009B8A0F /* Muzix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muzix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F3F9EC2ACF51C0009B8A0F /* MuzixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzixApp.swift; sourceTree = "<group>"; };
 		C4F3F9EE2ACF51C0009B8A0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +86,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C42610262B760CF900F6F497 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4F3F9EE2ACF51C0009B8A0F /* ContentView.swift */,
+				C426102D2B760EBD00F6F497 /* CloseButton.swift */,
+				C426102F2B760FA000F6F497 /* SongListView.swift */,
+				C42610352B76137000F6F497 /* DictationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C42610272B760D0300F6F497 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C42610332B76115C00F6F497 /* PDFKitView.swift */,
+				C42610392B7620DA00F6F497 /* Levenshtein.swift */,
+				C426103E2B76288500F6F497 /* SpeechRecognizer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C4F3F9E02ACF51C0009B8A0F = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +131,9 @@
 		C4F3F9EB2ACF51C0009B8A0F /* Muzix */ = {
 			isa = PBXGroup;
 			children = (
+				C42610272B760D0300F6F497 /* Models */,
+				C42610262B760CF900F6F497 /* Views */,
 				C4F3F9EC2ACF51C0009B8A0F /* MuzixApp.swift */,
-				C4F3F9EE2ACF51C0009B8A0F /* ContentView.swift */,
 				C4F3F9F02ACF51C1009B8A0F /* Assets.xcassets */,
 				C4F3F9F22ACF51C1009B8A0F /* Muzix.entitlements */,
 				C4F3F9F32ACF51C1009B8A0F /* Preview Content */,
@@ -196,7 +230,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					C4F3F9E82ACF51C0009B8A0F = {
 						CreatedOnToolsVersion = 15.0;
@@ -263,8 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C42610342B76115C00F6F497 /* PDFKitView.swift in Sources */,
+				C426103A2B7620DA00F6F497 /* Levenshtein.swift in Sources */,
 				C4F3F9EF2ACF51C0009B8A0F /* ContentView.swift in Sources */,
 				C4F3F9ED2ACF51C0009B8A0F /* MuzixApp.swift in Sources */,
+				C426102E2B760EBD00F6F497 /* CloseButton.swift in Sources */,
+				C426103F2B76288500F6F497 /* SpeechRecognizer.swift in Sources */,
+				C42610302B760FA000F6F497 /* SongListView.swift in Sources */,
+				C42610362B76137000F6F497 /* DictationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +375,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -396,6 +437,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -423,10 +465,14 @@
 				CODE_SIGN_ENTITLEMENTS = Muzix/Muzix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Muzix/Preview Content\"";
 				DEVELOPMENT_TEAM = 496474LP4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Muzix/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I will listen to every word you say.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Let me understand you.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -460,10 +506,14 @@
 				CODE_SIGN_ENTITLEMENTS = Muzix/Muzix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Muzix/Preview Content\"";
 				DEVELOPMENT_TEAM = 496474LP4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Muzix/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I will listen to every word you say.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Let me understand you.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -496,6 +546,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
@@ -518,6 +569,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
@@ -539,6 +591,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
@@ -560,6 +613,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
