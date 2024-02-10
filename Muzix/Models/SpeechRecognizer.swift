@@ -19,20 +19,42 @@ public class SpeechRecognizer: ObservableObject {
     
     private let audioEngine = AVAudioEngine()
     
+    @available(iOS 17, *)
+    private var lmConfiguration: SFSpeechLanguageModel.Configuration {
+        let outputDir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let dynamicLanguageModel = outputDir.appendingPathComponent("LM")
+        let dynamicVocabulary = outputDir.appendingPathComponent("Vocab")
+        return SFSpeechLanguageModel.Configuration(languageModel: dynamicLanguageModel, vocabulary: dynamicVocabulary)
+    }
+    
     @MainActor var text = ""
     
-    enum RecognizerError: Error {
-        case nilRecognizer
-        case notAuthorizedToRecognize
-        case notPermittedToRecord
-        case recognizerIsUnavailable
-        
-        var message: String {
-            switch self {
-            case .nilRecognizer: return "Can't initialize speech recognizer"
-            case .notAuthorizedToRecognize: return "Not authorized to recognize speech"
-            case .notPermittedToRecord: return "Not permitted to record audio"
-            case .recognizerIsUnavailable: return "Recognizer is unavailable"
+    func loadModel() {
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            // Divert to the app's main thread so that the UI
+            // can be updated.
+            OperationQueue.main.addOperation {
+                switch authStatus {
+                case .authorized:
+                    if #available(iOS 17, *) {
+                        Task.detached {
+                            do {
+                                let assetUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!.appendingPathComponent("customlm.bin")
+                                if !FileManager.default.fileExists(atPath: assetUrl.path()) {
+                                    await trainModel(songs: getFiles(path: Bundle.main.resourcePath! + "/Songz/"))
+                                }
+                                try await SFSpeechLanguageModel.prepareCustomLanguageModel(for: assetUrl,
+                                                                                           clientIdentifier: "com.lsjumb.Muzix",
+                                                                                           configuration: self.lmConfiguration)
+                                print("Finished preparing custom LM")
+                            } catch {
+                                print("Failed to prepare custom LM: \(error.localizedDescription)")
+                            }
+                        }
+                    }
+                default:
+                    print("Not authorized")
+                }
             }
         }
     }
@@ -60,8 +82,13 @@ public class SpeechRecognizer: ObservableObject {
         guard let recognitionRequest = recognitionRequest else { fatalError("Unable to created a SFSpeechAudioBufferRecognitionRequest object") }
         recognitionRequest.shouldReportPartialResults = true
         
+        if #available(iOS 17, *) {
+            recognitionRequest.customizedLanguageModel = self.lmConfiguration
+        }
+        
         // Create a recognition task for the speech recognition session.
         // Keep a reference to the task so that it can be canceled.
+        speechRecognizer.defaultTaskHint = .search
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
             var isFinal = false
             
@@ -78,9 +105,6 @@ public class SpeechRecognizer: ObservableObject {
                 
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
-                
-                //                self.recordButton.isEnabled = true
-                //                self.recordButton.setTitle("Start Recording", for: [])
             }
         }
         
@@ -93,7 +117,6 @@ public class SpeechRecognizer: ObservableObject {
         audioEngine.prepare()
         try audioEngine.start()
         
-        // Let the user know to start talking.
         text = ""
     }
     

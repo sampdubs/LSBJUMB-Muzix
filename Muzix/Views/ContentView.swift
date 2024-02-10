@@ -14,25 +14,6 @@ struct ContentView: View {
     
     var speechRecognizer = SpeechRecognizer()
     
-    func getFiles() -> [String] {
-        let fm = FileManager.default
-        
-        do {
-            var items = try fm.contentsOfDirectory(atPath: path)
-            for i in 0..<items.count {
-                let index = items[i].index(items[i].endIndex, offsetBy: -5)
-                items[i] = String(items[i][...index])
-            }
-            items = items.sorted()
-            items.remove(at: items.firstIndex{$0 == "Teazers"}!)
-            items.insert("Teazers", at: 0)
-            return items
-        } catch {
-            return ["Error"]
-        }
-        
-    }
-    
     var body: some View {
         ZStack {
             if (currentSong != nil) {
@@ -44,17 +25,15 @@ struct ContentView: View {
                 }
                 
             } else {
-                SongListView(songs: self.getFiles(), onClick: {
+                SongListView(songs: getFiles(path: path), onClick: {
                     currentSong = $0
                 })
             }
             DictationView(speechRecognizer: speechRecognizer, recieveText: { text in
                 currentSong = nil
-                if (text == "") {
-                    print("Didn't hear that")
-                } else {
+                if (text != "") {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                        currentSong = text.closestString(options: self.getFiles())
+                        currentSong = text.closestString(options: getFiles(path: path))
                     }
                 }
             })

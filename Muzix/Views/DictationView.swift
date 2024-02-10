@@ -44,6 +44,9 @@ struct DictationView: View {
                 }
             }
         }
+        .onAppear {
+            speechRecognizer.loadModel()
+        }
     }
     
     @MainActor func beginRecording() {

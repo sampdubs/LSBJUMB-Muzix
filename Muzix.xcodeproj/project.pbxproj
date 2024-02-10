@@ -13,6 +13,8 @@
 		C42610362B76137000F6F497 /* DictationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42610352B76137000F6F497 /* DictationView.swift */; };
 		C426103A2B7620DA00F6F497 /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42610392B7620DA00F6F497 /* Levenshtein.swift */; };
 		C426103F2B76288500F6F497 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426103E2B76288500F6F497 /* SpeechRecognizer.swift */; };
+		C4CD3C0F2B778CD900C62560 /* GetFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD3C0D2B778CD800C62560 /* GetFiles.swift */; };
+		C4CD3C102B778CD900C62560 /* TrainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD3C0E2B778CD800C62560 /* TrainModel.swift */; };
 		C4F3F9ED2ACF51C0009B8A0F /* MuzixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3F9EC2ACF51C0009B8A0F /* MuzixApp.swift */; };
 		C4F3F9EF2ACF51C0009B8A0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3F9EE2ACF51C0009B8A0F /* ContentView.swift */; };
 		C4F3F9F12ACF51C1009B8A0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F3F9F02ACF51C1009B8A0F /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		C42610352B76137000F6F497 /* DictationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictationView.swift; sourceTree = "<group>"; };
 		C42610392B7620DA00F6F497 /* Levenshtein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levenshtein.swift; sourceTree = "<group>"; };
 		C426103E2B76288500F6F497 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		C4CD3C0D2B778CD800C62560 /* GetFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFiles.swift; sourceTree = "<group>"; };
+		C4CD3C0E2B778CD800C62560 /* TrainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainModel.swift; sourceTree = "<group>"; };
 		C4F3F9E92ACF51C0009B8A0F /* Muzix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muzix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F3F9EC2ACF51C0009B8A0F /* MuzixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzixApp.swift; sourceTree = "<group>"; };
 		C4F3F9EE2ACF51C0009B8A0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				C42610332B76115C00F6F497 /* PDFKitView.swift */,
 				C42610392B7620DA00F6F497 /* Levenshtein.swift */,
 				C426103E2B76288500F6F497 /* SpeechRecognizer.swift */,
+				C4CD3C0D2B778CD800C62560 /* GetFiles.swift */,
+				C4CD3C0E2B778CD800C62560 /* TrainModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -297,7 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CD3C0F2B778CD900C62560 /* GetFiles.swift in Sources */,
 				C42610342B76115C00F6F497 /* PDFKitView.swift in Sources */,
+				C4CD3C102B778CD900C62560 /* TrainModel.swift in Sources */,
 				C426103A2B7620DA00F6F497 /* Levenshtein.swift in Sources */,
 				C4F3F9EF2ACF51C0009B8A0F /* ContentView.swift in Sources */,
 				C4F3F9ED2ACF51C0009B8A0F /* MuzixApp.swift in Sources */,
