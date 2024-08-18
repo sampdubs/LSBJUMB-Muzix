@@ -22,6 +22,23 @@ struct ContentView: View {
                     CloseButton(closeAction: {
                         currentSong = nil
                     })
+                    if (currentSong == "Stuff Like That") {
+                        SwitchSong(onClick: {
+                            currentSong = nil
+                            let newSong: String = $0
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                currentSong = newSong
+                            }
+                        }, songName: "Whisper Your Name")
+                    } else if (currentSong == "White Punks on Dope") {
+                        SwitchSong(onClick: {
+                            currentSong = nil
+                            let newSong: String = $0
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                currentSong = newSong
+                            }
+                        }, songName: "All Right Now")
+                    }
                 }
                 
             } else {
@@ -44,4 +61,25 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+struct SwitchSong: View {
+    let onClick: (String) -> Void
+    let songName: String
+    
+    var body: some View {
+        HStack {
+            VStack{
+                Spacer()
+                Button(action: {
+                    onClick(songName)
+                }, label: {
+                    Text(songName)
+                        .fontWeight(.bold)
+                })
+                .padding(8)
+            }
+            Spacer()
+        }
+    }
 }
