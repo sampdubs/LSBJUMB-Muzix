@@ -14,7 +14,7 @@ pdfReader = PyPDF2.PdfReader(pdfFileObj)
 tableOfContents = pdfReader.pages[0].extract_text()
 
 # extract song names and page numbers from table of contents
-pattern = re.compile(r"(\d+):\s+(.+?)\s*(?=\d+:|\n|\Z)")
+pattern = re.compile(r"(\d+)[:\.]\s+(.+?)\s*(?=\d+:|\n|\Z)")
 
 matches = re.findall(pattern, tableOfContents)
 matches = [(int(page), title) for page, title in matches]
